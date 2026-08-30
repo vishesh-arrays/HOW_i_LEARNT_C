@@ -38,7 +38,10 @@ In C, integers are whole numbers without any decimal points. They are one of the
 Declaring, initializing, and modifying integers:
 
 ```c
-int age; // Declaringint score = 100; // Declaring and initializingscore = 90; // Modifying
+int age;
+// Declaringint score = 100;
+ // Declaring and initializingscore = 90;
+ // Modifying
 ```
 
 Print an integer using printf:
@@ -68,7 +71,7 @@ double pi = 3.14159265359;
 ```
 
 The main differences between float and double:
-
+```
 1. Precision: Double has higher precision than float
     - Float: ~7 decimal digits
     - Double: ~15 decimal digits
@@ -82,7 +85,7 @@ The main differences between float and double:
     - Double: 2.3E-308 to 1.7E+308
 
 Print a float value:
-
+```
 ```c
 float temperature = 98.6f;printf("Temperature is %f degrees\n", temperature);
 ```
@@ -134,7 +137,9 @@ In C, there is no built-in boolean data type like in other languages. Instead, C
 Define an integer to represent a boolean value:
 
 ```c
-int isTrue = 1;  // Represents trueint isFalse = 0; // Represents false
+int isTrue = 1;
+ // Represents trueint isFalse = 0;
+ // Represents false
 ```
 
 In C, any non-zero value is considered "true" while zero is considered "false". 
@@ -142,7 +147,8 @@ In C, any non-zero value is considered "true" while zero is considered "false".�
 Use these boolean values in conditions:
 
 ```c
-int age = 25;int isAdult = (age > 17);printf("Is adult? %d\n", isAdult);
+int age = 25;int isAdult = (age > 17);
+printf("Is adult? %d\n", isAdult);
 ```
 
 ```c
@@ -152,7 +158,8 @@ Output:Is adult? 1
 You can use comparison operators to produce boolean results. For example, `>` checks if the left value is greater than the right, and `>=` checks if the left value is greater than _or equal to_ the right:
 
 ```c
-int age = 18;int isAdult = (age >= 18); // true if age is 18 or olderprintf("Is adult? %d\n", isAdult);
+int age = 18;int isAdult = (age >= 18);
+ // true if age is 18 or olderprintf("Is adult? %d\n", isAdult);
 ```
 
 ```c
@@ -162,7 +169,9 @@ Output:Is adult? 1
 Starting with C99, you can include the `<stdbool.h>` header to use the boolean type:
 
 ```c
-#include <stdbool.h>bool isTrue = true;   // Now using actual boolean typebool isFalse = false; // Using predefined constants
+#include <stdbool.h>bool isTrue = true;
+ // Now using actual boolean typebool isFalse = false;
+ // Using predefined constants
 ```
 
 But you will learn more about the usage of booleans later throughout your journey
@@ -197,7 +206,8 @@ This creates a constant named TAX_RATE with the value 0.07. Note that attempting
 Use constants in your program like regular variables:  
 
 ```c
-float area = PI * radius * radius;float tax = price * TAX_RATE;
+float area = PI * radius * radius;
+float tax = price * TAX_RATE;
 ```
 
 Constants make your code more readable and easier to maintain. If you need to change a value used in multiple places, you only need to update it once.
@@ -252,7 +262,8 @@ Let's start with implicit casting:
 Implicit casting happens automatically when converting from a smaller data type to a larger one:
 
 ```c
-int num = 10;double decimal_num;// Implicit casting from int to doubledecimal_num = num;
+int num = 10;double decimal_num;
+// Implicit casting from int to doubledecimal_num = num;
 ```
 
 After executing the above code, `decimal_num` will have the value `10.0`
@@ -268,7 +279,9 @@ Now let's look at explicit casting:
 Explicit casting is done manually by placing the target data type in parentheses before the value you want to convert. This is necessary when converting from a larger data type to a smaller one, where data loss may occur:
 
 ```c
-double decimal_num = 5.65;int num;// Explicit casting from double to intnum = (int)decimal_num;
+double decimal_num = 5.65;
+int num;
+// Explicit casting from double to intnum = (int)decimal_num;
 ```
 
 After executing the above code, `num` will have the value `5`
@@ -296,7 +309,8 @@ The syntax for explicit casting is:
 Let's convert a float to an integer:
 
 ```c
-float price = 45.95;int rounded_price = (int) price;
+float price = 45.95;
+int rounded_price = (int) price;
 ```
 
 After executing the above code, `rounded_price` will be:
@@ -308,7 +322,8 @@ Notice that the decimal part is truncated (not rounded).
 We can also cast characters to integers to get their ASCII values:
 
 ```c
-char letter = 'A';int ascii_value = (int) letter;
+char letter = 'A';
+int ascii_value = (int) letter;
 ```
 
 After executing the above code, `ascii_value` will be:
