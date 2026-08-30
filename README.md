@@ -1,6 +1,6 @@
-💻 My C Programming Journey
+# 💻 My C Programming Journey
 
-👋 Hi, I'm VISHESH!
+# 👋 Hi, I'm VISHESH!
 🎓 BCA Student | C Learner | Programmer in Progress
 
 Welcome to my C Programming repository! 🚀
@@ -11,12 +11,12 @@ C is one of the languages I'm using to strengthen my understanding of programmin
 
 ---
 
-🧠 Why I Started Learning C
+# 🧠 Why I Started Learning C
 
 I wanted to learn a language that would help me understand programming beyond just writing code.
 
 C helped me explore concepts such as:
-
+```
 - How programs are structured
 - How memory works
 - How variables are stored
@@ -24,13 +24,13 @@ C helped me explore concepts such as:
 - How arrays are represented
 - How pointers interact with memory
 - How different programming concepts work together
-
+```
 ---
 
-📚 What I've Learned
+# 📚 What I've Learned
 
-🔹 C Fundamentals
-
+# 🔹 C Fundamentals
+```
 - Introduction to C
 - Structure of a C program
 - Variables
@@ -40,27 +40,27 @@ C helped me explore concepts such as:
 - Input and output
 - Type conversion
 - Comments
-
-🔹 Decision Making
-
+```
+# 🔹 Decision Making
+```
 - "if"
 - "if-else"
 - Nested "if"
 - "else-if"
 - "switch"
 - Conditional operators
-
-🔹 Loops
-
+```
+# 🔹 Loops
+```
 - "for"
 - "while"
 - "do-while"
 - Nested loops
 - "break"
 - "continue"
-
-🔹 Functions
-
+```
+# 🔹 Functions
+```
 - Function declaration
 - Function definition
 - Function calls
@@ -68,9 +68,9 @@ C helped me explore concepts such as:
 - Return values
 - Passing arguments
 - Recursion
-
-🔹 Arrays & Strings
-
+```
+# 🔹 Arrays & Strings
+```
 - One-dimensional arrays
 - Multi-dimensional arrays
 - Array traversal
@@ -79,27 +79,27 @@ C helped me explore concepts such as:
 - Character arrays
 - Strings
 - String manipulation
-
-🔹 Pointers
-
+```
+# 🔹 Pointers
+```
 - Addresses
 - Pointer variables
 - Dereferencing
 - Pointers and arrays
 - Pointers and functions
 - Pointer arithmetic
-
+```
 Pointers were one of the concepts I found particularly interesting because they helped me understand how programs interact with memory.
 
-🔹 Structures
-
+# 🔹 Structures
+```
 - "struct"
 - Structure members
 - Arrays of structures
 - Nested structures
-
-🔹 Memory
-
+```
+# 🔹 Memory
+```
 I've also started understanding:
 
 - Stack and heap concepts
@@ -108,13 +108,13 @@ I've also started understanding:
 - "calloc()"
 - "realloc()"
 - "free()"
-
+```
 ---
 
-🔨 Things I've Practiced
+# 🔨 Things I've Practiced
 
 During my C learning journey, I've practiced programs involving:
-
+```
 - Mathematical calculations
 - Number problems
 - Prime numbers
@@ -130,13 +130,13 @@ During my C learning journey, I've practiced programs involving:
 - Sorting
 - Pointers
 - Structures
-
+```
 These small programs helped me turn individual concepts into actual working programs.
 
 ---
 
-🧩 How I Learn
-
+# 🧩 How I Learn
+```
 My learning process is simple:
 
 Learn the Concept
@@ -166,10 +166,10 @@ What happens in memory?
 What happens if I change this?
 
 Can I solve the same problem another way?
-
+```
 ---
 
-📂 What's Inside This Repository?
+# 📂 What's Inside This Repository?
 
 You'll find:
 
@@ -196,7 +196,7 @@ Small problems I've solved while learning.
 
 ---
 
-🧠 My Learning Philosophy
+# 🧠 My Learning Philosophy
 
 I believe learning programming isn't about remembering every function or piece of syntax.
 
@@ -208,7 +208,7 @@ Understand → Experiment → Break → Debug → Fix → Learn
 
 ---
 
-🌱 Still Learning
+# 🌱 Still Learning
 
 I'm still learning and improving my programming fundamentals.
 
@@ -226,10 +226,11 @@ Thanks for visiting my C programming journey! ⭐
 
 ---
 
-⚠️ Disclaimer
-
+# ⚠️ Disclaimer
+```
 The code and explanations in this repository are part of my personal learning journey.
 
 I take inspiration and learning material from different sources, including documentation, websites, videos, courses, books, and other GitHub repositories.
 
 There may be mistakes or inefficient approaches in some programs. Please use the code and explanations with caution and verify important information independently.
+```
