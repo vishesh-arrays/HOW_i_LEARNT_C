@@ -133,7 +133,30 @@ continue;    
 ```
 
 The loop will iterate through all of the numbers. When it reaches ⁣`i=5` it will skip that iteration and continue to the next one. The output is:
+# Nested Loops
 
+-Nested loops are loops placed inside another loop. For each iteration of the outer loop, the inner loop executes completely.
+
+Create an outer loop that runs 3 times:
+```
+for (int i = 0; i < 2; i++) {
+    // Outer loop code here
+}
+```
+Add an inner loop that runs 3 times for each outer loop iteration:
+```
+for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 3; j++) {
+        printf("%d,%d ", i, j);
+    }
+    printf("\n");
+}
+\*The output will be:
+
+0,0 0,1 0,2 
+1,0 1,1 1,2*\
+````
+Notice how the inner loop completes its iterations before the outer loop moves to its next iteration.
 ```c
 3 4 6 7 8
 ```
