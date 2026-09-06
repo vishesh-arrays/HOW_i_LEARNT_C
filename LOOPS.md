@@ -162,3 +162,59 @@ Notice how the inner loop completes its iterations before the outer loop moves t
 ```
 
 Notice, number 5 is not in the output.
+
+# Nested Loops
+
+
+
+Nested loops are loops placed inside another loop. For each iteration of the outer loop, the inner loop executes completely.
+
+Create an outer loop that runs 3 times:
+```
+for (int i = 0; i < 2; i++) {
+    // Outer loop code here
+}
+```
+Add an inner loop that runs 3 times for each outer loop iteration:
+```
+for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 3; j++) {
+        printf("%d,%d ", i, j);
+    }
+    printf("\n");
+}
+```
+The output will be:
+```
+0,0 0,1 0,2 
+1,0 1,1 1,2
+```
+Notice how the inner loop completes its iterations before the outer loop moves to its next iteration.
+
+# Infinite Loops
+
+
+
+An infinite loop is a loop that continues indefinitely because its termination condition is never met. While usually undesirable, there are some situations where infinite loops can be useful, such as in embedded systems or for continuously running programs.
+
+In C, you can create an infinite loop using various constructs:
+
+Using a while loop:
+```
+while (1) {
+    // code to be executed
+}
+Using a for loop:
+
+for (;;) {
+    // code to be executed
+}
+Using a do-while loop:
+
+do {
+    // code to be executed
+} while (1);
+```
+To exit an infinite loop, you typically use a break statement or modify a control variable within the loop based on some condition.
+
+Be cautious when using infinite loops, as they can cause your program to hang if not properly managed.
