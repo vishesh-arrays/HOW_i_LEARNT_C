@@ -116,3 +116,86 @@ factorial(1) returns 1 (base case)
 factorial(2) returns 2 * 1 = 2
 factorial(3) returns 3 * 2 = 6
 ```
+# Function Prototypes
+
+
+
+In C, we can declare a function before we use it. A function prototype tells the compiler about a function's name, parameters, and return type before the actual function is defined.
+
+Create a function prototype for a function that adds two integers:
+```
+int add(int a, int b);
+Then define the function:
+
+int add(int a, int b) {
+    return a + b;
+}
+```
+The prototype is usually above the main, while the function itself is below the main, so the code looks cleaner.
+
+Now you can use this function in the main:
+```
+int main() {
+    int result = add(5, 3);
+    printf("%d", result);
+    return 0;
+}
+```
+Without the prototype, if you call the function before its definition, you'll get a compiler error.
+
+#CALCULATOR
+```
+#include <stdio.h>
+
+int add(int a, int b) { return a + b; }
+int subtract(int a, int b) { return a - b; }
+int multiply(int a, int b) { return a * b; }
+int divide(int a, int b);
+int calculate(int a, int b, char operation);
+
+int main() {
+    int a, b;
+    char op;
+
+    if (scanf("%d %d %c", &a, &b, &op) != 3) {
+        scanf(" %c", &op);
+        if (op == 'q') {
+            return 0;
+        }
+        printf("Invalid input\n");
+        return 1;
+    }
+
+    int result = calculate(a, b, op);
+    if (result != -99999) {
+        printf("%d\n", result);
+    }
+    else {
+        printf("Invalid input\n");
+    }
+
+    return 0;
+}
+
+int divide(int a, int b) {
+    if (b == 0) {
+        return -99999;
+    }
+    return a / b;
+}
+
+int calculate(int a, int b, char operation) {
+    switch (operation) {
+        case '+':
+            return add(a, b);
+        case '-':
+            return subtract(a, b);
+        case '*':
+            return multiply(a, b);
+        case '/':
+            return divide(a, b);
+        default:
+            return -99999;
+    }
+}
+```
