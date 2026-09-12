@@ -51,8 +51,6 @@ Trying to access an element outside the array bounds (like numbers[5] in our exa
 
 # Accessing Elements
 
-
-
 Arrays store multiple values of the same type. We use the index position to access individual elements in an array.
 
 In C, array indices start at 0. This means the first element is at index 0, the second at index 1, and so on.
@@ -69,10 +67,8 @@ After executing the above code, firstElement contains:
 
 10
 Access the third element (index 2):
-```
-# Modifying Elements
 
-
+#Modifying Elements
 
 In C, you can modify elements of an array after they've been initialized.
 
@@ -100,7 +96,44 @@ Now the array contains:
 [10, 20, 35, 40, 55]
 int thirdElement = numbers[2];
 ```
-```
 This stores the value 30 in thirdElement.
 
 Trying to access an element outside the array bounds (like numbers[5] in our example) leads to undefined behavior and can cause program crashes.
+
+# Multidimensional Arrays
+
+
+
+A multidimensional array is an array of arrays. In C, you can create a 2D array (the most common multidimensional array), essentially a table with rows and columns.
+
+Declare a 2D array:
+```
+int matrix[3][4];
+```
+This creates a 2D array with 3 rows and 4 columns.
+
+You can initialize a 2D array when declaring it:
+```
+int matrix[3][4] = {
+    {1, 2, 3, 4},    // First row
+    {5, 6, 7, 8},    // Second row
+    {9, 10, 11, 12}  // Third row
+};
+```
+To access elements in a 2D array, use two indices:
+```
+int value = matrix[1][2];  // Accesses row 1, column 2 (value will be 7)
+```
+To modify an element in a 2D array:
+```
+matrix[0][3] = 100;  // Changes the element at row 0, column 3 to 100
+```
+You can also use nested loops to access all elements in a 2D array:
+```
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 4; j++) {
+        printf("%d ", matrix[i][j]);
+    }
+    printf("\n");  // New line after each row
+}
+```
