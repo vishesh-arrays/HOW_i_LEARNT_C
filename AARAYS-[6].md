@@ -70,7 +70,36 @@ After executing the above code, firstElement contains:
 10
 Access the third element (index 2):
 ```
+# Modifying Elements
+
+
+
+In C, you can modify elements of an array after they've been initialized.
+
+Create an integer array with 5 elements:
+```
+int numbers[5] = {10, 20, 30, 40, 50};
+```
+To modify an element, use the array name with the index in square brackets:
+
+// Change the third element (index 2) to 35
+```
+numbers[2] = 35;
+```
+After executing the above code, the array will contain:
+
+[10, 20, 35, 40, 50]
+
+You can also use variables as indices:
+```
+int index = 4;
+numbers[index] = 55;  // Changes the fifth element (index 4) to 55
+```
+Now the array contains:
+```
+[10, 20, 35, 40, 55]
 int thirdElement = numbers[2];
+```
 ```
 This stores the value 30 in thirdElement.
 
