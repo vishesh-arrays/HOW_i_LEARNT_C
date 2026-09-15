@@ -137,3 +137,37 @@ for (int i = 0; i < 3; i++) {
     printf("\n");  // New line after each row
 }
 ```
+# Arrays as Function Arguments
+
+
+
+Arrays can be passed as arguments to functions in C. When an array is passed to a function, what is actually passed is the memory address of the first element.
+
+Declare an array and a function that takes it as an argument:
+```
+void displayArray(int arr[], int size) {
+    for(int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+```
+Create an array and call the function:
+```
+int numbers[5] = {10, 20, 30, 40, 50};
+displayArray(numbers, 5);
+```
+When you pass an array to a function, changes made to the array inside the function will affect the original array:
+```
+void doubleValues(int arr[], int size) {
+    for(int i = 0; i < size; i++) {
+        arr[i] = arr[i] * 2;
+    }
+}
+```
+```
+// Call the function
+
+doubleValues(numbers, 5);
+// Now numbers contains: {20, 40, 60, 80, 100}
+```
