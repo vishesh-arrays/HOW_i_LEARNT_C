@@ -69,3 +69,85 @@ printf("%p", ptr);  // This will print 0 or (nil)
 Initializing pointers to NULL is considered good programming practice because it prevents your pointer from containing random garbage values. An uninitialized pointer might contain any random memory address, which could lead to unpredictable behavior if you accidentally try to use it.
 
 You can check if a pointer is NULL before using it, which helps prevent crashes and makes your code more robust. This safety check becomes especially important as your programs grow more complex.
+
+
+# Array Names as Pointers
+Arrays and pointers in C have a special relationship that's fundamental to understanding how C works with data in memory. When you declare an array, the array name itself acts as a constant pointer to the first element of the array.
+
+This means that when you have an array like int numbers[5];, the name numbers is essentially a pointer that always points to numbers[0]. You can think of the array name as a built-in pointer that you don't need to declare separately.
+```
+int numbers[5] = {10, 20, 30, 40, 50};
+// 'numbers' points to the first element
+// numbers == &numbers[0]  // These are equivalent!
+```
+This equivalence is crucial: numbers and &numbers[0] both give you the exact same memory address. The array name is just a more convenient way to refer to the address of the first element without having to use the address-of operator.
+
+Understanding this relationship opens the door to using pointer techniques with arrays, which can make your code more flexible and efficient. The key difference is that unlike regular pointers, array names are constant pointers - you cannot change what they point to.
+
+# Array Elements - Pointers
+Now that you understand how array names work as pointers, you can use this knowledge to access array elements in a completely different way. Instead of using the familiar bracket notation like array[i], you can use pointer notation to achieve the same result.
+
+The key insight is that array[i] is exactly equivalent to *(array + i). When you write array + i, you're telling C to move i positions forward from the start of the array. The dereference operator * then gets the value at that location.
+```
+int numbers[5] = {10, 20, 30, 40, 50};
+// These two lines do exactly the same thing:
+printf("%d", numbers[2]);    // Prints 30
+printf("%d", *(numbers + 2)); // Also prints 30
+```
+This pointer notation works because C automatically calculates the correct memory address based on the data type size. When you add 2 to an integer array pointer, C moves forward by 2 × sizeof(int) bytes, landing exactly on the third element.
+eg:
+```
+#include <stdio.h>
+
+int main() {
+    // Declare and initialize the array 'values' with 6 elements
+    int values[6] = {5, 15, 25, 35, 45, 55};
+    
+    // Use a for loop to print each element using pointer notation *(values + i)
+    for (int i = 0; i < 6; i++) {
+        printf("Element %d: %d\n", i, *(values + i));
+    }
+    
+    // After the loop, print the third element using both pointer and array notation
+    printf("Third element via pointer: %d\n", *(values + 2));
+    printf("Third element via array: %d\n", values[2]);
+    
+    return 0;
+}
+```
+
+Understanding this equivalence gives you flexibility in how you work with arrays and prepares you for more advanced pointer techniques that you'll encounter as you continue learning C.
+
+# Pointer Arithmetic
+
+You've learned how to access array elements using pointer notation like *(array + i). Now you'll discover an even more powerful technique: pointer arithmetic, which allows you to move pointers through memory using simple increment and decrement operations.
+
+When you increment a pointer with ++ or decrement it with --, the pointer doesn't just move by one byte. Instead, it moves by the size of the data type it points to. For an integer pointer, ptr++ moves forward by sizeof(int) bytes, landing exactly on the next integer in memory.
+```
+int numbers[5] = {10, 20, 30, 40, 50};
+int *ptr = numbers;    // Points to first element (10)
+ptr++;                 // Now points to second element (20)
+ptr++;                 // Now points to third element (30)
+```
+This automatic size calculation is what makes pointer arithmetic so powerful and convenient. You don't need to worry about byte calculations - C handles the memory addressing for you based on the pointer's data type.
+
+Pointer arithmetic is particularly useful for traversing arrays in loops. Instead of using array indices, you can increment a pointer to move through each element sequentially, which often results in more efficient code.
+
+# Comparing Pointers
+You've learned how to move through arrays using pointer arithmetic. Now you'll discover that pointers can also be compared using the same relational operators you use with regular variables: ==, !=, <, and >.
+
+When you compare two pointers, you're comparing their memory addresses. This is particularly useful when both pointers point to elements within the same array, as it allows you to determine their relative positions in memory.
+```
+int numbers[5] = {10, 20, 30, 40, 50};
+int *start = numbers;        // Points to first element
+int *end = numbers + 4;      // Points to last element
+
+if (start < end) {
+    printf("start comes before end in memory");
+}
+```  
+Pointer comparison becomes especially powerful in loop conditions. Instead of using a counter variable, you can compare your current pointer position with a target pointer to control when the loop should stop. This creates elegant, efficient code for array traversal.
+
+The key insight is that ptr1 < ptr2 tells you that ptr1 points to an element that appears earlier in the array than the element ptr2 points to. This relationship makes pointer comparison a natural fit for controlling loops that process arrays sequentially.
+
+  
